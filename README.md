@@ -11,3 +11,6 @@
 #设置证书功能将会改变系统原有证书结构，会造成已激活证书丢失.导入证书不会.
 
 #最新版本 V8.6f
+
+![image](https://github.com/laomms/PidKeyBatch/blob/master/pidkey.png)
+
