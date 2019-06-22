@@ -39,9 +39,9 @@
 
 #8.Under Windows 10, the theory can query all Windows 10 versions of the key, the query process may automatically switch the system version, the special version of the key may not be able to feedback the error code.
 
-#9.Support Win7 Pro and Win7 Ultimate key queries under Windows 7.
+#9.Support all Win7 version key queries under Windows 7.
 
-#10.Windows 8.1 key query is supported under Windows 8.1.
+#10.All Windows 8.1 key query is supported under Windows 8.1.
 
 #11.Batch query automatic filtering key and automatically deduplicate key query.
 
