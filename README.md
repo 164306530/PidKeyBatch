@@ -31,7 +31,7 @@
 
 #4.After the software is started, the system certificate environment will be modified, which will affect the original certificate of the system. If you want to restore, right-click on the main interface to select the recovery certificate environment. After the restart, it will return to normal.
 
-#5.Support MAX query for all version keys.
+#5.Support MAK query for all version keys.
 
 #6.Support version key query of Office series 2010-2019 professional enhanced version.
 
