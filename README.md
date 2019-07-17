@@ -54,5 +54,6 @@
 V8.80
 https://drive.google.com/open?id=1IVlipVTsEsUWuiRTUK8adrUVyTcfKekG
 
-V8.82
+V8.82  添加版本转换
+
 https://drive.google.com/file/d/1ZL2WMzHa9YhglVN2E-qfYhBq8wTV83ix/view?usp=sharing
