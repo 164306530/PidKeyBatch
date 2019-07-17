@@ -52,6 +52,7 @@
 #14.The rebuild tokens function is mainly used to repair the tokens file when the exception is activated. This function will invalidate the activated certificate. It will also cause the Office certificate to be lost.
 
 V8.80
+
 https://drive.google.com/open?id=1IVlipVTsEsUWuiRTUK8adrUVyTcfKekG
 
 V8.82  添加版本转换
