@@ -1,0 +1,14 @@
+证书包工具，根据列表选择需要安装的证书集合。包含两个界面控件。证书安装及证书转换.
+
+使用说明:
+
+vb.net:
+        Imports PKeyMgr
+        Private WithEvents licenseform As PKeyMgr.Form1
+        licenseform = New PKeyMgr.Form1("证书安装卸载")
+        licenseform.ShowDialog()
+
+        '版本转换
+        Private WithEvents conversionform As PKeyMgr.Form2
+        conversionform = New PKeyMgr.Form2()
+        conversionform.ShowDialog()
