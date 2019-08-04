@@ -1,0 +1,19 @@
+检测密钥返回错误代码.
+
+函数:Function Checking(szKey As String, ByRef ResultList As List(Of String)) As Integer
+szKey:输入密钥
+ResultList:返回检测结果，包括(密钥类型,密钥ID,密钥类型,错误代码,剩余次数,检测时间)
+
+
+vb.net下使用举例,新线程下:
+
+        Dim func As New DetectionKey.CheckKey
+        Dim ItemList As New List(Of String)
+        Dim flags = func.Checking(txtKey.Text, ItemList)
+        Do
+            If flags <> 0 Then
+                Exit Do
+            End If
+            Application.DoEvents()
+        Loop
+        Debug.Print(String.Join("*", ItemList))
