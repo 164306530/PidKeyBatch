@@ -1,19 +1,17 @@
-¼ì²âÃÜÔ¿·µ»Ø´íÎó´úÂë.
+æ£€æµ‹å¯†é’¥è¿”å›é”™è¯¯ä»£ç .
 
-º¯Êı:Function Checking(szKey As String, ByRef ResultList As List(Of String)) As Integer
-szKey:ÊäÈëÃÜÔ¿
-ResultList:·µ»Ø¼ì²â½á¹û£¬°üÀ¨(ÃÜÔ¿ÀàĞÍ,ÃÜÔ¿ID,ÃÜÔ¿ÀàĞÍ,´íÎó´úÂë,Ê£Óà´ÎÊı,¼ì²âÊ±¼ä)
+å‡½æ•°:Function Checking(szKey As String, ByRef ResultList As List(Of String)) As Integer
+szKey:è¾“å…¥å¯†é’¥
+ResultList:è¿”å›æ£€æµ‹ç»“æœï¼ŒåŒ…æ‹¬(å¯†é’¥ç±»å‹,å¯†é’¥ID,å¯†é’¥ç±»å‹,é”™è¯¯ä»£ç ,å‰©ä½™æ¬¡æ•°,æ£€æµ‹æ—¶é—´)
 
 
-vb.netÏÂÊ¹ÓÃ¾ÙÀı,ĞÂÏß³ÌÏÂ:
+vb.netä¸‹ä½¿ç”¨ä¸¾ä¾‹,æ–°çº¿ç¨‹ä¸‹:
 
-        Dim func As New DetectionKey.CheckKey
-        Dim ItemList As New List(Of String)
-        Dim flags = func.Checking(txtKey.Text, ItemList)
-        Do
-            If flags <> 0 Then
-                Exit Do
-            End If
+        Dim Thread As New System.Threading.Thread(Sub() func.Checking(szKey, ItemList))
+        Thread.IsBackground = True
+        Thread.Start()
+        Do Until ItemList.Count > 0
             Application.DoEvents()
         Loop
+        Thread.Abort()
         Debug.Print(String.Join("*", ItemList))
