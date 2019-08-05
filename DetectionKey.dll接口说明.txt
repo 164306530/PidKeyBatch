@@ -15,3 +15,21 @@ vb.net下使用举例,新线程下:
         Loop
         Thread.Abort()
         Debug.Print(String.Join("*", ItemList))
+        
+ 或者
+ 
+     Private Function InlineAssignHelper(Of T)(ByRef Target As T, ByVal Value As T) As T
+        Target = Value
+        Return Value
+    End Function
+    
+    
+        Dim nFlag As Integer = 0
+        Dim Thread As New System.Threading.Thread(Sub() InlineAssignHelper(nFlag, func.Checking(txtKey.Text, ItemList)))
+        Thread.IsBackground = True
+        Thread.Start()
+        Do Until nFlag <> 0
+            Application.DoEvents()
+        Loop
+        Thread.Abort()
+        Debug.Print(String.Join("*", ItemList))
