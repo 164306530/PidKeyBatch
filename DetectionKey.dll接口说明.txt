@@ -1,9 +1,14 @@
 检测密钥返回错误代码.
 
-函数:Function Checking(szKey As String, ByRef ResultList As List(Of String)) As Integer
+单个检测函数:Function Checking(szKey As String, ByRef ResultList As List(Of String)) As Integer
 szKey:输入密钥
-ResultList:返回检测结果，包括(密钥类型,密钥ID,密钥类型,错误代码,剩余次数,检测时间)
 
+ResultList:返回检测结果，包括(密钥类型,密钥ID,密钥类型,错误代码,剩余次数,检测时间)
+批量检测函数:Function BatchChecking(szText As String) As Integer
+szText:带有密钥的内容,自动过滤密钥
+Public Sub GetResult(ByRef szRes As String, ByRef ResultList As List(Of String))
+szRes:检测过程反馈
+ResultList:检测结果
 
 vb.net下使用举例,新线程下:
 
@@ -16,7 +21,7 @@ vb.net下使用举例,新线程下:
         Thread.Abort()
         Debug.Print(String.Join("*", ItemList))
         
- 或者
+批量检测:
  
      Private Function InlineAssignHelper(Of T)(ByRef Target As T, ByVal Value As T) As T
         Target = Value
@@ -25,11 +30,21 @@ vb.net下使用举例,新线程下:
     
     
         Dim nFlag As Integer = 0
-        Dim Thread As New System.Threading.Thread(Sub() InlineAssignHelper(nFlag, func.Checking(txtKey.Text, ItemList)))
+        Dim szRes As String = ""
+        Dim OldResult As String = ""
+        Dim Thread As New System.Threading.Thread(Sub() InlineAssignHelper(nFlag, func.BatchChecking(outputTextBox.Text)))
         Thread.IsBackground = True
         Thread.Start()
         Do Until nFlag <> 0
+            func.GetResult(szRes, ItemList)
+            If szRes <> OldResult Then
+                OldResult = szRes
+                Console.WriteLine(szRes) '输出检测密钥数
+            End If
+            If ItemList.Count > 0 Then
+                Debug.Print(String.Join("*", ItemList))  '逐条输出检测结果
+                ItemList.Clear()
+            End If
             Application.DoEvents()
         Loop
         Thread.Abort()
-        Debug.Print(String.Join("*", ItemList))
