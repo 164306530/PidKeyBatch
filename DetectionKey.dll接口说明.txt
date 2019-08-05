@@ -10,7 +10,7 @@ Public Sub GetResult(ByRef szRes As String, ByRef ResultList As List(Of String))
 szRes:检测过程反馈
 ResultList:检测结果
 
-vb.net下使用举例,新线程下:
+vb.net下使用举例,需要管理员权限,新线程下:
 
         Dim func As New DetectionKey.CheckKey
         Dim ItemList As New List(Of String)
