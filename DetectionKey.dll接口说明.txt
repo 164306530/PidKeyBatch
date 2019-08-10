@@ -32,7 +32,7 @@ vb.net下使用举例,需要管理员权限,新线程下:
         Return Value
     End Function
     
-    
+    Private CheckBatchKey()
         Dim nFlag As Integer = 0
         Dim szRes As String = ""
         Dim OldResult As String = ""
@@ -52,3 +52,4 @@ vb.net下使用举例,需要管理员权限,新线程下:
             Application.DoEvents()
         Loop
         Thread.Abort()
+    end Sub
