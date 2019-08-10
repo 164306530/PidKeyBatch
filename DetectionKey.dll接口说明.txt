@@ -12,6 +12,7 @@ ResultList:检测结果
 
 vb.net下使用举例,需要管理员权限,新线程下:
 
+     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
         Dim func As New DetectionKey.CheckKey
         Dim ItemList As New List(Of String)
         Dim Thread As New System.Threading.Thread(Sub() func.Checking(szKey, ItemList))
@@ -22,6 +23,7 @@ vb.net下使用举例,需要管理员权限,新线程下:
         Loop
         Thread.Abort()
         Debug.Print(String.Join("*", ItemList))
+    end Sub
         
 批量检测:
  
