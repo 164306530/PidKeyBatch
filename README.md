@@ -57,3 +57,8 @@ V9.0
 支持已被数字权利激活的机子查询win10密钥的错误代码。
 
 Supports checking error code of the win10 key under digital activated  machine.
+
+V9.2  
+检测在线密钥时不会激活windows或者office
+
+Do not activate the system while detect online keys
