@@ -60,5 +60,9 @@ Supports checking error code for the win10 key under digital activated  machine.
 
 V9.2  
 检测在线密钥时不会激活windows或者office
+支持在Win10下检测win7和Win8.1密钥
 
 Do not activate the system while detect online keys
+Support detecting win7 and Win8.1 keys under Win10
+
+
